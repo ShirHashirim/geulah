@@ -30,20 +30,7 @@ Each language section contains seven pages:
 
 ## Hosting with GitHub Pages
 
-This repository is set up to automatically deploy to GitHub Pages using GitHub Actions. Here's how it works:
-
-1. The GitHub Action workflow (`.github/workflows/deploy.yml`) is triggered whenever changes are pushed to the `main` branch.
-2. The workflow builds and deploys the static site to GitHub Pages.
-3. The site is then accessible at `https://shirhashirim.github.io/geulah/`
-
-### Setting Up GitHub Pages
-
-To enable GitHub Pages for this repository:
-
-1. Go to the repository settings on GitHub.
-2. Navigate to the "Pages" section.
-3. Under "Source", select "GitHub Actions" as the deployment source.
-4. The site will be automatically deployed when you push changes to the main branch.
+ The site is accessible at `https://shirhashirim.github.io/geulah/`
 
 ## Local Development
 
