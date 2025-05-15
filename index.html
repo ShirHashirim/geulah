@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geulah - Redemption and Connection to God</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .language-selection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .language-card {
+            width: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .language-card.en {
+            border-top: 5px solid #3498db;
+        }
+        
+        .language-card.he {
+            border-top: 5px solid #2ecc71;
+        }
+        
+        .language-card.fr {
+            border-top: 5px solid #2c3e50;
+        }
+        
+        .language-card.ru {
+            border-top: 5px solid #e74c3c;
+        }
+        
+        .language-flag {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .en .language-flag {
+            background-image: url('https://images.unsplash.com/photo-1526470498-9ae73c665de8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .he .language-flag {
+            background-image: url('https://images.unsplash.com/photo-1542743408-218cc173cda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .fr .language-flag {
+            background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .ru .language-flag {
+            background-image: url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .language-info {
+            padding: 1.5rem;
+            background-color: #fff;
+        }
+        
+        .language-info h3 {
+            margin-top: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+        
+        .language-info p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .select-language {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .select-language:hover {
+            background-color: #e9ecef;
+        }
+        
+        .welcome-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .welcome-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">Geulah | גאולה</div>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome to Geulah</h1>
+            <p>Explore the concept of redemption and divine connection through a multi-language journey. This website offers insights into the spiritual path of Geulah (redemption) and ways to connect with God in our modern world. Please select your preferred language to begin.</p>
+        </section>
+
+        <section class="language-selection">
+            <div class="language-card en">
+                <div class="language-flag"></div>
+                <div class="language-info">
+                    <h3>English</h3>
+                    <p>Explore the path of redemption and connection to God in English.</p>
+                    <a href="en/index.html" class="select-language">Select English</a>
+                </div>
+            </div>
+            
+            <div class="language-card he">
+                <div class="language-flag"></div>
+                <div class="language-info">
+                    <h3>עברית</h3>
+                    <p>חקור את דרך הגאולה והחיבור לאלוהים בעברית.</p>
+                    <a href="he/index.html" class="select-language">בחר עברית</a>
+                </div>
+            </div>
+            
+            <div class="language-card fr">
+                <div class="language-flag"></div>
+                <div class="language-info">
+                    <h3>Français</h3>
+                    <p>Explorez le chemin de la rédemption et de la connexion à Dieu en français.</p>
+                    <a href="fr/index.html" class="select-language">Choisir Français</a>
+                </div>
+            </div>
+            
+            <div class="language-card ru">
+                <div class="language-flag"></div>
+                <div class="language-info">
+                    <h3>Русский</h3>
+                    <p>Исследуйте путь искупления и связи с Богом на русском языке.</p>
+                    <a href="ru/index.html" class="select-language">Выбрать Русский</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Geulah. All rights reserved.</p>
+                <p>Images from Unsplash - Free to use under their license</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
