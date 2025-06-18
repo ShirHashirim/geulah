@@ -22,15 +22,17 @@ Each language section contains seven pages:
 
 ## Features
 
-- Modern, responsive design that works on all device sizes
-- Language switcher on each page for easy navigation between languages
-- Consistent navigation and structure across all languages
-- Proper RTL (right-to-left) support for Hebrew content
-- Beautiful imagery from Unsplash (copyright-free)
+- **Automatic Language Detection**: Users are redirected to their preferred language site based on browser settings.
+- **Responsive Hamburger Menu**: Mobile-friendly navigation with a collapsible menu.
+- **Language Switcher**: Integrated into the main navigation on every page.
+- **Consistent Structure**: Uniform navigation and layout across all languages.
+- **RTL Support**: Proper right-to-left layout for Hebrew.
+- **Modern Design**: Clean, responsive design across devices.
+- **Visual Content**: Uses copyright-free images from Unsplash.
 
 ## Hosting with GitHub Pages
 
- The site is accessible at `https://shirhashirim.github.io/geulah/`
+ The site is accessible at `https://geulah.org.il/` and github `https://shirhashirim.github.io/geulah/`
 
 ## Local Development
 
