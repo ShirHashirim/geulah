@@ -36,7 +36,7 @@ jobs:
 
       - name: Upload artifact
         # This is the correct action for Pages, not the deprecated one
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload entire repository
           path: '.'
