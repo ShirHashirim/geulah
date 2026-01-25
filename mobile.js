@@ -1,14 +1,23 @@
+// Mobile menu functionality
+(function() {
+    'use strict';
 
-        // Mobile menu functionality
+    function initMobileMenu() {
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
+
+        // Ensure elements exist before attaching listeners
+        if (!hamburger || !navLinks || !navOverlay) {
+            console.warn('Mobile menu elements not found');
+            return;
+        }
 
         function toggleMenu() {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
             navOverlay.classList.toggle('active');
-            
+
             // Prevent body scroll when menu is open
             if (navLinks.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
@@ -41,3 +50,12 @@
                 closeMenu();
             }
         });
+    }
+
+    // Initialize after DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();

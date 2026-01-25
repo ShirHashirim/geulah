@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu System Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { padding: 20px; font-family: Arial, sans-serif; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body class="en-site">
+    <h1>Menu System Test Page</h1>
+
+    <div class="test-section">
+        <h2>Menu Configuration Test</h2>
+        <div id="configTest"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Generated Navigation Menu</h2>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <!-- Menu will be generated here -->
+            </ul>
+        </nav>
+    </div>
+
+    <div class="test-section">
+        <h2>Generated Footer Links</h2>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <!-- Footer links will be generated here -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Link Validation</h2>
+        <div id="linkValidation"></div>
+    </div>
+
+    <script src="menu-config.js"></script>
+    <script src="menu-generator.js"></script>
+    <script>
+        // Test the menu configuration
+        const configTest = document.getElementById('configTest');
+        const lang = menuConfig.detectLanguage();
+        const items = menuConfig.getMenuItems(lang);
+
+        configTest.innerHTML = `
+            <p class="info"><strong>Detected Language:</strong> ${lang}</p>
+            <p class="info"><strong>Menu Items Count:</strong> ${items.length}</p>
+            <p class="success">✓ Menu configuration loaded successfully</p>
+        `;
+
+        // Validate links
+        const linkValidation = document.getElementById('linkValidation');
+        let validationHTML = '<ul>';
+
+        items.forEach(item => {
+            const fullPath = item.url.startsWith('http') ? item.url :
+                             item.url.startsWith('../') ? item.url :
+                             'en/' + item.url;
+            validationHTML += `<li><strong>${item.text}</strong>: <code>${item.url}</code></li>`;
+        });
+
+        validationHTML += '</ul>';
+        linkValidation.innerHTML = validationHTML;
+
+        console.log('Menu items:', items);
+    </script>
+</body>
+</html>

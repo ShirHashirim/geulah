@@ -77,14 +77,13 @@
     setTimeout(showPopup, 1000);
 
     // Redirect logic
-    const basePath = location.pathname.replace(/\/+$/, ''); // remove trailing slashes
     const supportedLangs = ['en', 'he', 'fr', 'ru'];
     const userLang = navigator.language.slice(0, 2);
     const redirectLang = supportedLangs.includes(userLang) ? userLang : 'en';
 
     // Delay redirect to show popup
     setTimeout(() => {
-      window.location.href = `${basePath}/${redirectLang}/index.html`;
+      window.location.href = `${redirectLang}/index.html`;
     }, 3000);
 
     function toggleMenu() {
