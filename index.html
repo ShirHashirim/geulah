@@ -27,6 +27,7 @@
     <nav class="nav-links">
       <a href="en/index.html">Home</a>
       <a href="en/what-is-geulah.html">What is Geulah?</a>
+      <a href="books/index.html">Books</a>
     </nav>
     <div class="language-dropdown">
       <a href="en/index.html">EN</a>
@@ -35,6 +36,16 @@
       <a href="ru/index.html">RU</a>
     </div>
   </header>
+
+  <!-- Books Announcement Popup -->
+  <div id="booksPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; margin: 20px; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+      <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: #333; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; font-size: 18px;">&times;</button>
+      <h2 style="margin-top: 0; color: #333;">New Books Available!</h2>
+      <p style="color: #666; line-height: 1.6;">Explore our collection of spiritual books to deepen your understanding of Geulah and connection to God.</p>
+      <a href="books/index.html" style="display: inline-block; background: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-top: 1rem; font-weight: bold;">View Books</a>
+    </div>
+  </div>
 
   <main style="padding: 2rem; text-align: center;">
     <h1>Redirecting you to your language site...</h1>
@@ -48,11 +59,34 @@
         </div>
     </footer>
   <script>
-   const basePath = location.pathname.replace(/\/+$/, ''); // remove trailing slashes
-const supportedLangs = ['en', 'he', 'fr', 'ru'];
-const userLang = navigator.language.slice(0, 2);
-const redirectLang = supportedLangs.includes(userLang) ? userLang : 'en';
-window.location.href = `${basePath}/${redirectLang}/index.html`;
+    // Books popup functions
+    function showPopup() {
+      if (!localStorage.getItem('booksPopupClosed')) {
+        const popup = document.getElementById('booksPopup');
+        popup.style.display = 'flex';
+      }
+    }
+
+    function closePopup() {
+      const popup = document.getElementById('booksPopup');
+      popup.style.display = 'none';
+      localStorage.setItem('booksPopupClosed', 'true');
+    }
+
+    // Show popup after a short delay
+    setTimeout(showPopup, 1000);
+
+    // Redirect logic
+    const basePath = location.pathname.replace(/\/+$/, ''); // remove trailing slashes
+    const supportedLangs = ['en', 'he', 'fr', 'ru'];
+    const userLang = navigator.language.slice(0, 2);
+    const redirectLang = supportedLangs.includes(userLang) ? userLang : 'en';
+
+    // Delay redirect to show popup
+    setTimeout(() => {
+      window.location.href = `${basePath}/${redirectLang}/index.html`;
+    }, 3000);
+
     function toggleMenu() {
       document.querySelector('.nav').classList.toggle('open');
     }

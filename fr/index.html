@@ -10,6 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="fr-site">
+    <!-- Books Announcement Popup -->
+    <div id="booksPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; margin: 20px; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: #333; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; font-size: 18px;">&times;</button>
+            <h2 style="margin-top: 0; color: #333;">Nouveaux livres disponibles!</h2>
+            <p style="color: #666; line-height: 1.6;">Explorez notre collection de livres spirituels pour approfondir votre compréhension de la Geoulah et votre connexion à Dieu.</p>
+            <a href="../books/index.html" style="display: inline-block; background: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-top: 1rem; font-weight: bold;">Voir les livres</a>
+        </div>
+    </div>
+
     <header>
         <nav>
             <div class="logo"><a href="index.html">Geoulah</a></div>
@@ -29,6 +39,7 @@
                 <li><a href="three-ways-to-find-geulah.html">Trois Voies</a></li>
                 <li><a href="return-from-exile.html">Retour d'Exil</a></li>
                 <li><a href="first-fruits.html">Prémices</a></li>
+                <li><a href="../books/index.html">Livres</a></li>
             </ul>
         </nav>
         
@@ -151,5 +162,25 @@
         </div>
     </footer>
 	 <script src="../mobile.js"></script>
+     <script>
+        // Books popup functions
+        function showPopup() {
+            if (!localStorage.getItem('booksPopupClosed')) {
+                const popup = document.getElementById('booksPopup');
+                popup.style.display = 'flex';
+            }
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('booksPopup');
+            popup.style.display = 'none';
+            localStorage.setItem('booksPopupClosed', 'true');
+        }
+
+        // Show popup after page loads
+        window.addEventListener('load', function() {
+            setTimeout(showPopup, 1000);
+        });
+     </script>
 </body>
 </html>
